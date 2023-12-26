@@ -1,5 +1,4 @@
 import Header from "./components/Header.js";
-import Team from "./components/Team.js";
 import { getXataClient } from "@/xata";
 
 export default async function Home() {
@@ -9,7 +8,6 @@ export default async function Home() {
   return (
     <main className="">
       <Header />
-      <Team />
     </main>
   );
 }

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { UserButton } from "@clerk/nextjs";
@@ -31,7 +29,7 @@ export default function Header() {
           PlaceHolder3
         </p>
         <span className="hidden md:block mx-3">
-          <UserButton afterSignOutUrl="/" />
+          <UserButton afterSignOutUrl="/welcome" />
         </span>
       </div>
     </div>
