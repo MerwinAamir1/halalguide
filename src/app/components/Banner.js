@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import Link from "next/link";
+import { redirect } from "next/dist/server/api-utils";
 
 export default function Banner({ setRemove }) {
   return (
@@ -41,12 +43,12 @@ export default function Banner({ setRemove }) {
             </svg>
             Find and Rate Halal Food All Across The Globe
           </p>
-          <a
-            href="/sign-up"
+          <Link
+            href="/"
             className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
           >
             Register now <span aria-hidden="true">&rarr;</span>
-          </a>
+          </Link>
         </div>
         <div className="flex flex-1 justify-end">
           <button
