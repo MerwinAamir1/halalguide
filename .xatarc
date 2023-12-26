@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://MerwinAamir1-s-workspace-uq1v9q.us-east-1.xata.sh/db/halal-food-db",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
