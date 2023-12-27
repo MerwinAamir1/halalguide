@@ -52,8 +52,8 @@ function Restaurant({ name, imgLink, stars }) {
             className="h-full w-full object-cover object-center group-hover:opacity-75"
           />
         </div>
-        <h3 class="mt-4 text-sm text-gray-700">{name}</h3>
-        <p class="mt-1 text-lg font-medium text-gray-900">
+        <h3 className="mt-4 text-sm text-gray-700">{name}</h3>
+        <p className="mt-1 text-lg font-medium text-gray-900">
           {Array(Math.min(stars, 5))
             .fill()
             .map(() => "★")}
