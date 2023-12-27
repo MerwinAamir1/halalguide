@@ -9,11 +9,11 @@ export default function Header() {
 
       <div className="flex flex-auto justify-center">
         <input
-          className="hidden sm:flex rounded-lg mx-1 p-4 h-11 focus:outline-none flex-grow max-w-screen-lg"
+          className="hidden sm:flex rounded-xl mx-1 p-4 h-11 focus:outline-none flex-grow max-w-screen-lg bg-gray-100"
           type="search"
           placeholder="Find Halal Food..."
         />
-        <span className="hidden sm:flex bg-white rounded-lg rounded-l-none -ml-4 items-center w-10 h-11">
+        <span className="hidden sm:flex bg-gray-100 rounded-xl rounded-l-none -ml-4 items-center w-10 h-11">
           <MagnifyingGlassIcon className="w-6" />
         </span>
       </div>
