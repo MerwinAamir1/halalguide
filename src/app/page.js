@@ -1,13 +1,14 @@
+"use client";
 import Header from "./components/Header.js";
-import { getXataClient } from "@/xata";
+import Food from "./components/Food.js";
+import { FooterWithSitemap } from "./components/FooterWithSitemap.js";
 
-export default async function Home() {
-  const xata = getXataClient();
-  const records = await xata.db.folder.getMany();
-
+export default function Home() {
   return (
     <main className="">
       <Header />
+      <Food />
+      <FooterWithSitemap />
     </main>
   );
 }
