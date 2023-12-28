@@ -2,38 +2,16 @@
 import Link from "next/link";
 import React from "react";
 
-export default function Food() {
+export default function Food({ data }) {
   return (
     <div>
       <div className="bg-white">
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <h2 className="sr-only">Halal Food</h2>
-          <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-            <Restaurant
-              name="Good Burger"
-              imgLink="http://a.mktgcdn.com/p/ZoGnmjelxlEn6h6gHku1tBxb3KXrbcQspSLuDv4fuM0/1364x1362.jpg"
-              stars={5}
-            />
-            <Restaurant
-              name="Halal Place"
-              imgLink="https://th.bing.com/th/id/OIP.jJI3bTJ-diLfKDHb9-vwmwHaE8?rs=1&pid=ImgDetMain"
-              stars={4}
-            />
-            <Restaurant
-              name="Taystees"
-              imgLink="https://th.bing.com/th/id/R.83262eca1ef8ce33c82141cba81e93b3?rik=sn8jEGlxb7V4Ow&pid=ImgRaw&r=0"
-              stars={3}
-            />
-            <Restaurant
-              name="Halal Place"
-              imgLink="https://th.bing.com/th/id/R.1a32300a1f3d69708d49b08c6eb89693?rik=lt4UftWfwKgojw&pid=ImgRaw&r=0"
-              stars={3}
-            />
-            <Restaurant
-              name="Good Burger"
-              imgLink="https://th.bing.com/th/id/R.e0f292dbf4410492e113bb6d527f4a4a?rik=6A2G4JzON11A3Q&pid=ImgRaw&r=0"
-              stars={5}
-            />
+          <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 ">
+            {Object.entries(data).map(([key, { id, name, img, rating }]) => (
+              <Restaurant key={id} name={name} imgLink={img} stars={rating} />
+            ))}
           </div>
         </div>
       </div>

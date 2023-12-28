@@ -2,26 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { UserButton } from "@clerk/nextjs";
-import getData from ".././api/restaurants.js";
 
-export default function Header() {
-  const [data, setData] = useState([]);
+export default function Header({ data, setData }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const newData = await getData();
-        const names = newData.map((item) => item.name);
-        setData(names);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
   const handleChange = (event) => {
     const value = event.target.value;
     setSearchTerm(value);
@@ -49,8 +34,8 @@ export default function Header() {
             value={searchTerm}
             onChange={handleChange}
           />
-          <span className="hidden md:flex rounded-xl absolute inset-y-0 right-0 items-center pr-3 pointer-events-none">
-            <MagnifyingGlassIcon className="w-6 h-6 text-gray-500" />
+          <span className="hidden md:flex rounded-xl absolute inset-y-0 right-0 items-center pr-3">
+            <MagnifyingGlassIcon className="w-6 h-6 text-gray-500 cursor-pointer" />
           </span>
           {suggestions.length > 0 && (
             <ul className="hidden md:absolute md:flex md:flex-col z-10 bg-white border border-gray-200 rounded-md mt-12 max-h-60 overflow-y-auto w-full">

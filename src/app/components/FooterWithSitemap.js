@@ -61,7 +61,7 @@ export function FooterWithSitemap() {
                     className="font-normal"
                   >
                     <Link
-                      href="#"
+                      href="/newsletter"
                       className="inline-block py-1 pr-2 transition-transform hover:scale-105"
                     >
                       {link}

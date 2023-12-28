@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Team from "../components/Team.js";
+import Team from "./Team.js";
 import Banner from "../components/Banner.js";
 import { FooterWithSitemap } from "../components/FooterWithSitemap.js";
 import { useState } from "react";
