@@ -1,26 +1,34 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { UserButton } from "@clerk/nextjs";
+import getData from ".././api/restaurants.js";
 
 export default function Header() {
-  const dummyData = [
-    "GoodBurger",
-    "Halal Food",
-    "Vegan Delight",
-    "Pizza Palace",
-    "Sushi Corner",
-  ];
+  const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const newData = await getData();
+        const names = newData.map((item) => item.name);
+        setData(names);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
   const handleChange = (event) => {
     const value = event.target.value;
     setSearchTerm(value);
 
     if (value.length > 0) {
-      const filteredSuggestions = dummyData.filter((item) =>
-        item.toLowerCase().includes(value.toLowerCase())
+      const filteredSuggestions = data.filter((item) =>
+        item.toLowerCase().startsWith(value.toLowerCase())
       );
       setSuggestions(filteredSuggestions);
     } else {
@@ -52,7 +60,7 @@ export default function Header() {
                   className="p-3 hover:bg-gray-100 cursor-pointer"
                   onClick={() => {
                     setSearchTerm(item);
-                    setSuggestions("");
+                    setSuggestions([]);
                   }}
                 >
                   {item}
