@@ -45,7 +45,7 @@ export default function Header() {
             <MagnifyingGlassIcon className="w-6 h-6 text-gray-500" />
           </span>
           {suggestions.length > 0 && (
-            <ul className="absolute z-10 bg-white border border-gray-200 rounded-md mt-12 max-h-60 overflow-y-auto w-full">
+            <ul className="hidden md:absolute md:flex md:flex-col z-10 bg-white border border-gray-200 rounded-md mt-12 max-h-60 overflow-y-auto w-full">
               {suggestions.map((item, index) => (
                 <li
                   key={index}
