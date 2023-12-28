@@ -28,7 +28,7 @@ export default function Header({ data, setData }) {
       <div className="flex flex-auto justify-center">
         <div className="relative sm:flex flex-grow max-w-screen-lg mx-1">
           <input
-            className="hidden md:flex bg-gray-100 rounded-xl p-4 h-11 focus:outline-none w-full  focus:bg-white focus:ring-1 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-black transition duration-300"
+            className="hidden md:flex bg-gray-100 rounded-xl p-4 h-11 focus:outline-none w-full  focus:bg-white focus:ring-1transition duration-300"
             type="search"
             placeholder="Find Halal Food..."
             value={searchTerm}
